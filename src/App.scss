@@ -1,0 +1,452 @@
+$almostWhite: hsl(36, 100%, 99%);
+$darkSpaceBlue: hsl(240, 100%, 5%);
+$gunmetal: hsl(237, 13%, 42%);
+$lightVermillion: hsl(5, 85%, 63%);
+$silver: hsl(236, 8%, 79%);
+$yellow: hsl(35, 78%, 62%);
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	overflow: hidden;
+}
+
+#root {
+	width: 100vw;
+	background-color: $almostWhite;
+	padding: 2rem 16%;
+
+	.App {
+		header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 2.5rem;
+
+			.logo {
+				svg {
+					cursor: pointer;
+					transition: transform 0.3s ease-in-out;
+				}
+			}
+
+			.links-desktop {
+				display: flex;
+				justify-content: space-between;
+				gap: 2rem;
+
+				a {
+					font-size: 0.85rem;
+					color: $gunmetal;
+					text-decoration: none;
+
+					background-image: linear-gradient($lightVermillion, $lightVermillion); // Allows transitions
+					background-position: left bottom; // Start the underline from the left
+					background-size: 0% 2px; // Initial state, no underline. On 100% the underline will be the full width of the text 
+					background-repeat: no-repeat;
+
+					cursor: pointer;
+					transition-property: background-size, color;
+					transition: 0.3s ease-in-out;
+
+				}
+			}
+
+			button {
+				display: none;
+			}
+
+			.links-mobile {
+				display: none;
+			}
+		}
+
+		main {
+			display: grid;
+			grid-auto-flow: column;
+			grid-auto-columns: 2fr 1fr;
+
+			.main-article {
+				padding-right: 2rem;
+
+				.image-container {
+					max-height: 300px;
+					overflow: hidden;
+					cursor: pointer;
+					margin-bottom: 1rem;
+
+					img {
+						max-width: 100%;
+						transition: transform 0.3s ease-in-out;
+					}
+				}
+
+				.content {
+					display: flex;
+
+					h2 {
+						flex: 1;
+
+						color: $darkSpaceBlue;
+						font-size: 3rem;
+						font-weight: 900;
+					}
+
+					.subtitle-and-button {
+						flex: 1;
+						padding: 1rem 1rem 0 2rem;
+						display: flex;
+						flex-direction: column;
+						justify-content: space-between;
+
+						p {
+							color: $gunmetal;
+							margin-bottom: 1rem;
+						}
+
+						button {
+							width: 12rem;
+							background-color: $lightVermillion;
+							color: $almostWhite;
+							font-size: 0.8rem;
+							font-weight: 600;
+							letter-spacing: 2px;
+							border: none;
+							padding: 1rem 2rem;
+
+							cursor: pointer;
+							transition-property: background-color, transform;
+							transition: 0.3s ease-in-out;
+
+							&:active {
+								background-color: $yellow;
+								transform: scale(0.95);
+							}
+						}
+					}
+				}
+
+			}
+
+			aside {
+				background-color: $darkSpaceBlue;
+				color: $almostWhite;
+
+				padding: 2rem 1rem;
+
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				gap: 1.25rem;
+
+				h3 {
+					color: $yellow;
+					font-size: 2.5rem;
+					font-weight: 700;
+				}
+
+				article {
+					h4 {
+						font-size: 1.25rem;
+						margin-bottom: 0.25rem;
+						cursor: pointer;
+						transition: color 0.3s ease-in-out;
+					}
+
+					p {
+						font-size: 0.9rem;
+						color: $silver;
+					}
+				}
+
+				.separator {
+					background-color: $gunmetal;
+					height: 1px;
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	footer {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 3rem;
+
+		article {
+			flex: 1;
+			display: flex;
+			gap: 1rem;
+			padding-right: 2rem;
+
+			img {
+				width: 100px;
+				cursor: pointer;
+				object-fit: cover;
+				transition: transform 0.3s ease-in-out;
+			}
+
+			h3 {
+				color: $silver;
+				font-size: 1.75rem;
+				font-weight: bold;
+			}
+
+			h4 {
+				cursor: pointer;
+				transition: color 0.3s ease-in-out;
+			}
+
+			p {
+				color: $gunmetal;
+				font-size: 0.9rem;
+			}
+		}
+
+	}
+}
+
+// DESKTOP HOVER STATES
+@media (width > 768px) {
+	#root {
+		.App {
+			header {
+				.logo {
+					svg:hover {
+						transform: scale(1.1);
+					}
+				}
+
+				.links-desktop {
+					a:hover {
+						color: $lightVermillion;
+						background-size: 100% 2px;
+					}
+				}
+			}
+
+			main {
+				.main-article {
+					.image-container:hover {
+						img {
+							transform: scale(1.05);
+						}
+					}
+
+					.content {
+						.subtitle-and-button {
+							button:hover {
+								background-color: $darkSpaceBlue;
+							}
+						}
+					}
+				}
+			}
+
+			aside {
+				article {
+					h4:hover {
+						color: $yellow;
+					}
+				}
+			}
+		}
+
+		footer {
+			article {
+				img:hover {
+					transform: scale(1.05);
+				}
+
+				h4:hover {
+					color: $lightVermillion;
+				}
+			}
+		}
+	}
+}
+
+// TOUCH DEVICES
+@media (width <=1000px) {
+	body {
+		overflow: scroll;
+		position: relative;
+	}
+
+	#root {
+		padding: 0 1rem 3rem 1rem;
+
+		.App {
+
+			header {
+				position: fixed;
+				background-color: $almostWhite;
+				width: 100%;
+				z-index: 2;
+				padding: 0.75rem 0;
+				height: 4rem;
+
+				transition: height 0.3s ease-in-out;
+
+				&.sticky {
+					height: 2rem;
+
+					.logo {
+						svg {
+							transform: scale(0.5);
+							transform-origin: left; // Keep the left padding the same
+						}
+					}
+
+					button {
+						transform: scale(0.7);
+						transform-origin: right; // Keep the right padding the same
+					}
+				}
+
+				.logo {
+					svg {
+						transition-property: transform, transform-origin;
+						transition: 0.3s ease-in-out;
+					}
+				}
+
+				.links-desktop {
+					display: none;
+				}
+
+				button {
+					display: inline;
+					position: absolute;
+					right: 2rem;
+					border: none;
+					background-color: transparent;
+					z-index: 2;
+
+					transition-property: transform, transform-origin;
+					transition: 0.3s ease-in-out;
+				}
+
+				.modal {
+					display: block;
+					position: fixed;
+
+					.overlay {
+						position: fixed;
+						top: 0;
+						left: 0;
+						width: 100vw;
+						height: 100%;
+						background-color: rgba(0, 0, 0, 0.5);
+
+						.links-mobile {
+							z-index: 1;
+							position: fixed;
+							display: flex;
+							flex-direction: column;
+							gap: 1rem;
+
+							background-color: $almostWhite;
+							height: 100%;
+							width: 70vw;
+							right: 0;
+							top: 0;
+
+							padding-top: 20vh;
+							padding-left: 1rem;
+
+							a {
+								font-size: 1rem;
+								color: $darkSpaceBlue;
+								text-decoration: none;
+								transition: color 0.3s ease-in-out;
+							}
+						}
+					}
+				}
+			}
+
+			main {
+				display: flex;
+				flex-direction: column;
+				padding-top: 4rem;
+
+				.main-article {
+					margin-bottom: 1rem;
+					padding-right: 0;
+
+					.content {
+						flex-direction: column;
+
+						h2 {
+							font-size: 2.5rem;
+						}
+
+						.subtitle-and-button {
+							padding: 1rem 0;
+
+						}
+					}
+				}
+
+			}
+		}
+
+		footer {
+			flex-direction: column;
+			gap: 2rem;
+		}
+	}
+}
+
+// SMALLER TOUCH DEVICES
+@media (width <=500px) {
+	#root {
+		.App {
+
+			main {
+				.main-article {
+					.image-container {
+						height: fit-content;
+
+						img {
+							aspect-ratio: 4 / 3;
+							min-height: 100%;
+							object-fit: cover;
+						}
+					}
+
+					.content {
+						h2 {
+							font-size: 2rem;
+						}
+					}
+				}
+			}
+
+			footer {
+				article {
+					img {
+						width: 75px;
+					}
+
+					h3 {
+						font-size: 1.5rem;
+					}
+
+					h4 {
+						font-size: 1.5rem;
+					}
+
+					p {
+						font-size: 0.75rem;
+					}
+				}
+			}
+		}
+	}
+}

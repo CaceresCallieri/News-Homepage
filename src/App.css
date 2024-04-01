@@ -1,0 +1,315 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: hidden;
+}
+
+#root {
+  width: 100vw;
+  background-color: hsl(36, 100%, 99%);
+  padding: 2rem 16%;
+}
+#root .App header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+#root .App header .logo svg {
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+#root .App header .links-desktop {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+#root .App header .links-desktop a {
+  font-size: 0.85rem;
+  color: hsl(237, 13%, 42%);
+  text-decoration: none;
+  background-image: linear-gradient(hsl(5, 85%, 63%), hsl(5, 85%, 63%));
+  background-position: left bottom;
+  background-size: 0% 2px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition-property: background-size, color;
+  transition: 0.3s ease-in-out;
+}
+#root .App header button {
+  display: none;
+}
+#root .App header .links-mobile {
+  display: none;
+}
+#root .App main {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 2fr 1fr;
+}
+#root .App main .main-article {
+  padding-right: 2rem;
+}
+#root .App main .main-article .image-container {
+  max-height: 300px;
+  overflow: hidden;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+#root .App main .main-article .image-container img {
+  max-width: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+#root .App main .main-article .content {
+  display: flex;
+}
+#root .App main .main-article .content h2 {
+  flex: 1;
+  color: hsl(240, 100%, 5%);
+  font-size: 3rem;
+  font-weight: 900;
+}
+#root .App main .main-article .content .subtitle-and-button {
+  flex: 1;
+  padding: 1rem 1rem 0 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#root .App main .main-article .content .subtitle-and-button p {
+  color: hsl(237, 13%, 42%);
+  margin-bottom: 1rem;
+}
+#root .App main .main-article .content .subtitle-and-button button {
+  width: 12rem;
+  background-color: hsl(5, 85%, 63%);
+  color: hsl(36, 100%, 99%);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  border: none;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition-property: background-color, transform;
+  transition: 0.3s ease-in-out;
+}
+#root .App main .main-article .content .subtitle-and-button button:active {
+  background-color: hsl(35, 78%, 62%);
+  transform: scale(0.95);
+}
+#root .App main aside {
+  background-color: hsl(240, 100%, 5%);
+  color: hsl(36, 100%, 99%);
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.25rem;
+}
+#root .App main aside h3 {
+  color: hsl(35, 78%, 62%);
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+#root .App main aside article h4 {
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+#root .App main aside article p {
+  font-size: 0.9rem;
+  color: hsl(236, 8%, 79%);
+}
+#root .App main aside .separator {
+  background-color: hsl(237, 13%, 42%);
+  height: 1px;
+  width: 100%;
+}
+#root footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
+#root footer article {
+  flex: 1;
+  display: flex;
+  gap: 1rem;
+  padding-right: 2rem;
+}
+#root footer article img {
+  width: 100px;
+  cursor: pointer;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+#root footer article h3 {
+  color: hsl(236, 8%, 79%);
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+#root footer article h4 {
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+#root footer article p {
+  color: hsl(237, 13%, 42%);
+  font-size: 0.9rem;
+}
+
+@media (width > 768px) {
+  #root .App header .logo svg:hover {
+    transform: scale(1.1);
+  }
+  #root .App header .links-desktop a:hover {
+    color: hsl(5, 85%, 63%);
+    background-size: 100% 2px;
+  }
+  #root .App main .main-article .image-container:hover img {
+    transform: scale(1.05);
+  }
+  #root .App main .main-article .content .subtitle-and-button button:hover {
+    background-color: hsl(240, 100%, 5%);
+  }
+  #root .App aside article h4:hover {
+    color: hsl(35, 78%, 62%);
+  }
+  #root footer article img:hover {
+    transform: scale(1.05);
+  }
+  #root footer article h4:hover {
+    color: hsl(5, 85%, 63%);
+  }
+}
+@media (width <= 1000px) {
+  body {
+    overflow: scroll;
+    position: relative;
+  }
+  #root {
+    padding: 0 1rem 3rem 1rem;
+  }
+  #root .App header {
+    position: fixed;
+    background-color: hsl(36, 100%, 99%);
+    width: 100%;
+    z-index: 2;
+    padding: 0.75rem 0;
+    height: 4rem;
+    transition: height 0.3s ease-in-out;
+  }
+  #root .App header.sticky {
+    height: 2rem;
+  }
+  #root .App header.sticky .logo svg {
+    transform: scale(0.5);
+    transform-origin: left;
+  }
+  #root .App header.sticky button {
+    transform: scale(0.7);
+    transform-origin: right;
+  }
+  #root .App header .logo svg {
+    transition-property: transform, transform-origin;
+    transition: 0.3s ease-in-out;
+  }
+  #root .App header .links-desktop {
+    display: none;
+  }
+  #root .App header button {
+    display: inline;
+    position: absolute;
+    right: 2rem;
+    border: none;
+    background-color: transparent;
+    z-index: 2;
+    transition-property: transform, transform-origin;
+    transition: 0.3s ease-in-out;
+  }
+  #root .App header .modal {
+    display: block;
+    position: fixed;
+  }
+  #root .App header .modal .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  #root .App header .modal .overlay .links-mobile {
+    z-index: 1;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: hsl(36, 100%, 99%);
+    height: 100%;
+    width: 70vw;
+    right: 0;
+    top: 0;
+    padding-top: 20vh;
+    padding-left: 1rem;
+  }
+  #root .App header .modal .overlay .links-mobile a {
+    font-size: 1rem;
+    color: hsl(240, 100%, 5%);
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+  }
+  #root .App main {
+    display: flex;
+    flex-direction: column;
+    padding-top: 4rem;
+  }
+  #root .App main .main-article {
+    margin-bottom: 1rem;
+    padding-right: 0;
+  }
+  #root .App main .main-article .content {
+    flex-direction: column;
+  }
+  #root .App main .main-article .content h2 {
+    font-size: 2.5rem;
+  }
+  #root .App main .main-article .content .subtitle-and-button {
+    padding: 1rem 0;
+  }
+  #root footer {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+@media (width <= 500px) {
+  #root .App main .main-article .image-container {
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  #root .App main .main-article .image-container img {
+    aspect-ratio: 4/3;
+    min-height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  #root .App main .main-article .content h2 {
+    font-size: 2rem;
+  }
+  #root .App footer article img {
+    width: 75px;
+  }
+  #root .App footer article h3 {
+    font-size: 1.5rem;
+  }
+  #root .App footer article h4 {
+    font-size: 1.5rem;
+  }
+  #root .App footer article p {
+    font-size: 0.75rem;
+  }
+}/*# sourceMappingURL=App.css.map */
