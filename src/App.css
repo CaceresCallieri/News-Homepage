@@ -42,6 +42,7 @@ body {
 }
 #root .App header button {
   display: none;
+  cursor: pointer;
 }
 #root .App header .links-mobile {
   display: none;

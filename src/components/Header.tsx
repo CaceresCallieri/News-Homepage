@@ -52,17 +52,17 @@ const Header = () => {
             {modal && (
                 <div className='modal'>
                     <div className="overlay" onClick={toggleModal}>
-                        <ul className={`links-mobile`}>
+                        <div className={`links-mobile`}>
                             <Links />
-                        </ul>
+                        </div>
                     </div>
                 </div>
             )}
 
             {/* Desktop Menu */}
-            <ul className="links-desktop">
+            <div className="links-desktop">
                 <Links />
-            </ul>
+            </div>
         </header>
     )
 }
