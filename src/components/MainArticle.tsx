@@ -10,7 +10,7 @@ const MainArticle = () => {
                 <img src={mainImage} alt="main article" />
             </div>
             <div className='content'>
-                <h2>{title}</h2>
+                <h1>{title}</h1>
                 <div className='subtitle-and-button'>
                     <p>{subtitle}</p>
                     <button>READ MORE</button>

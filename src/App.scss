@@ -18,7 +18,7 @@ body {
 #root {
 	width: 100vw;
 	background-color: $almostWhite;
-	padding: 2rem 16%;
+	padding: 4rem 15% 2rem 15%;
 
 	.App {
 		header {
@@ -88,11 +88,12 @@ body {
 				.content {
 					display: flex;
 
-					h2 {
+					h1 {
 						flex: 1;
 
 						color: $darkSpaceBlue;
 						font-size: 3rem;
+						line-height: 1.15em;
 						font-weight: 900;
 					}
 
@@ -112,9 +113,9 @@ body {
 							width: 12rem;
 							background-color: $lightVermillion;
 							color: $almostWhite;
-							font-size: 0.8rem;
-							font-weight: 600;
-							letter-spacing: 2px;
+							font-size: 0.85rem;
+							font-weight: bold;
+							letter-spacing: 4px;
 							border: none;
 							padding: 1rem 2rem;
 
@@ -382,7 +383,7 @@ body {
 					.content {
 						flex-direction: column;
 
-						h2 {
+						h1 {
 							font-size: 2.5rem;
 						}
 
@@ -421,7 +422,7 @@ body {
 					}
 
 					.content {
-						h2 {
+						h1 {
 							font-size: 2rem;
 						}
 					}

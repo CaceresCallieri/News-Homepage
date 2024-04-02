@@ -11,7 +11,7 @@ body {
 #root {
   width: 100vw;
   background-color: hsl(36, 100%, 99%);
-  padding: 2rem 16%;
+  padding: 4rem 15% 2rem 15%;
 }
 #root .App header {
   display: flex;
@@ -68,10 +68,11 @@ body {
 #root .App main .main-article .content {
   display: flex;
 }
-#root .App main .main-article .content h2 {
+#root .App main .main-article .content h1 {
   flex: 1;
   color: hsl(240, 100%, 5%);
   font-size: 3rem;
+  line-height: 1.15em;
   font-weight: 900;
 }
 #root .App main .main-article .content .subtitle-and-button {
@@ -89,9 +90,9 @@ body {
   width: 12rem;
   background-color: hsl(5, 85%, 63%);
   color: hsl(36, 100%, 99%);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 2px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 4px;
   border: none;
   padding: 1rem 2rem;
   cursor: pointer;
@@ -276,7 +277,7 @@ body {
   #root .App main .main-article .content {
     flex-direction: column;
   }
-  #root .App main .main-article .content h2 {
+  #root .App main .main-article .content h1 {
     font-size: 2.5rem;
   }
   #root .App main .main-article .content .subtitle-and-button {
@@ -298,7 +299,7 @@ body {
     -o-object-fit: cover;
        object-fit: cover;
   }
-  #root .App main .main-article .content h2 {
+  #root .App main .main-article .content h1 {
     font-size: 2rem;
   }
   #root .App footer article img {
